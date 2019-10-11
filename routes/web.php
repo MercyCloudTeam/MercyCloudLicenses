@@ -11,6 +11,10 @@
 |
 */
 
-$router->get('/', function () use ($router) {
-    return $router->app->version();
-});
+$router->get('/', "IndexController@index");
+
+$router->post('/activation','LicenseController@activation');
+$router->post('/cancel','LicenseController@cancel');
+$router->post('/inquire','LicenseController@inquire');
+$router->post('/generate','LicenseController@generate');
+
